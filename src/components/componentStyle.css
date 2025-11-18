@@ -1,0 +1,99 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.app_logo{
+    position: fixed;
+    top:0;
+    left: 0;
+    font-size: xx-large;
+    margin:16px;
+}
+/* links */
+.site_bar {
+    position: fixed;
+    background:linear-gradient(to bottom, green, rgb(197, 247, 164));
+    margin-top: 5%;
+    height: 95vh;
+    width: 250px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+.site_bar .links {
+    max-width: 300px;
+    width: 250px;
+    height: 70%;
+    list-style-type: none;
+
+}
+.site_bar .links ul{
+height:100% ;
+}
+.site_bar .links > ul {
+    font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* space between items */
+  list-style: none;
+  padding: 16px;
+}
+.site_bar .links > ul>li:hover{
+    background-color: rgb(197, 247, 164,0.1);
+    transition: all ease .4s;
+}
+.site_bar .links > ul>li{
+    padding: 20px;
+    border-radius: 5px;
+}
+.site_bar li {
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%; /* start right below the parent li */
+  left: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-left: 16px;
+  margin-top: 8px;
+ 
+}
+
+/* == Monitoring page == */
+.payment_monitoring{
+    text-align: center;
+    width: 100%;
+       margin: 0 auto;
+}
+
+.stats_container{
+    display: flex;
+    align-items: center;
+
+gap: 40px;    flex-direction: column-reverse;}
+.filter_panel{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+.filter_panel *,.filter_panel input[type="date"]{
+    padding: 10px;
+    border-radius: 5px;
+}
+.matrixpanel{
+    display: flex;
+    flex-wrap: wrap;
+    gap:16px;
+}
+.matrixpanel section{
+    font-size: 20px;
+   border-radius: 5px;
+    padding: 30px;
+    background-color: rgb(197, 247, 164,0.1) ;
+}
