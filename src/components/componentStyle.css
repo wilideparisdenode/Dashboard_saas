@@ -10,90 +10,356 @@
     font-size: xx-large;
     margin:16px;
 }
-/* links */
+/* componentStyle.css */
+
+/* ==Sidebar container == */
 .site_bar {
     position: fixed;
-    background:linear-gradient(to bottom, green, rgb(197, 247, 164));
-    margin-top: 5%;
-    height: 95vh;
-    width: 250px;
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-}
-
-.site_bar .links {
-    max-width: 300px;
-    width: 250px;
-    height: 70%;
-    list-style-type: none;
-
-}
-.site_bar .links ul{
-height:100% ;
-}
-.site_bar .links > ul {
-    font-size: 24px;
+  width: 200px;
+  min-height: 100vh;
+  background-color: green; /* dark gray */
+  color: #f9fafb;
+  padding: 1.5rem 1rem;
   display: flex;
   flex-direction: column;
-  gap: 16px; /* space between items */
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Inter', sans-serif;
+}
+
+/* Sidebar links */
+.site_bar .links ul {
   list-style: none;
-  padding: 16px;
+  padding: 0;
+  margin: 0;
 }
-.site_bar .links > ul>li:hover{
-    background-color: rgb(197, 247, 164,0.1);
-    transition: all ease .4s;
-}
-.site_bar .links > ul>li{
-    padding: 20px;
-    border-radius: 5px;
-}
-.site_bar li {
+
+.site_bar .links ul li {
+  margin-bottom: 1rem;
   position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-.dropdown {
-  position: absolute;
-  top: 100%; /* start right below the parent li */
-  left: 0;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding-left: 16px;
-  margin-top: 8px;
- 
+.site_bar .links ul li:hover {
+  color: #4f46e5; /* accent color */
 }
+
+/* Main link styles */
+.site_bar .links ul li a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+  display: block;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.site_bar .links ul li a:hover {
+  background-color: rgba(23, 221, 5, 0.753);
+  color: #4f46e5;
+}
+
+/* Dropdown menu */
+.site_bar .links ul li .dropdown {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: #0b8f06;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+.site_bar .links ul li .dropdown li {
+  margin: 0;
+}
+
+.site_bar .links ul li .dropdown li a {
+  padding: 0.5rem 0.75rem;
+  display: block;
+  font-weight: 400;
+  color: #d1d5db;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.site_bar .links ul li .dropdown li a:hover {
+  background-color: rgba(23, 221, 5, 0.753);
+  color: #fff;
+}
+
+/* Arrow indicator for dropdown */
+.site_bar .links ul li::after {
+  content: '▸';
+  position: absolute;
+  right: 10px;
+  transition: transform 0.25s ease;
+}
+
+.site_bar .links ul li:hover::after {
+  transform: rotate(90deg);
+  color: #4f46e5;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+  .site_bar {
+    width: 100%;
+    min-height: auto;
+    padding: 1rem;
+  }
+
+  .site_bar .links ul li::after {
+    right: 5px;
+  }
+}
+
 
 /* == Monitoring page == */
-.payment_monitoring{
-    text-align: center;
-    width: 100%;
-       margin: 0 auto;
+/* componentStyle.css */
+
+/* Root container */
+.payment_monitoring {
+  font-family: 'Inter', sans-serif;
+  color: #333;
+  padding: 2rem;
+  background-color: #f9fafb;
+  min-height: 100vh;
 }
 
-.stats_container{
-    display: flex;
-    align-items: center;
-
-gap: 40px;    flex-direction: column-reverse;}
-.filter_panel{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 18px;
+/* Stats & filter container */
+.stats_container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 2rem;
 }
-.filter_panel *,.filter_panel input[type="date"]{
+
+/* Filter panel */
+.filter_panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.filter_panel input,
+.filter_panel select {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.filter_panel input:focus,
+.filter_panel select:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+}
+
+/* Date range container inside filters */
+.date_range_container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Matrix panel (cards) */
+.matrixpanel {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+}
+
+.matrixpanel section {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.matrixpanel section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+}
+
+.matrixpanel h3 {
+  font-size: 1rem;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+}
+
+.matrixpanel p {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Transaction list */
+.transaction_list {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.transaction_list h2 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+thead {
+  background-color: #f3f4f6;
+}
+
+th, td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+th {
+  font-weight: 600;
+  color: #374151;
+}
+
+tbody tr {
+  background-color: #fff;
+  transition: background 0.2s ease;
+  cursor: pointer;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+tbody tr:hover {
+  background-color: #e5e7eb;
+}
+
+/* Button in table */
+tbody td button {
+  padding: 0.3rem 0.6rem;
+  border: none;
+  background-color: #4f46e5;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+tbody td button:hover {
+  background-color: #4338ca;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .filter_panel {
+    flex-direction: column;
+  }
+
+  .matrixpanel {
+    grid-template-columns: 1fr;
+  }
+}
+/* ==transaction detail == */
+.t_details_panel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* center both horizontally and vertically */
+
+    width: 300px;
+    border: 1px solid black;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* corrected from 'start' */
+
     padding: 10px;
-    border-radius: 5px;
+
+    box-shadow: 0 0 100px 50px rgba(0, 0, 0, 0.7); /* big shadow */
+    background: white; /* optional: makes content readable */
+    z-index: 1000; /* optional: stay above other content */
 }
-.matrixpanel{
+
+/* componentStyle.css */
+
+.t_details_panel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    max-width: 90%;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 100px 50px rgba(0, 0, 0, 0.7);
+    padding: 20px;
     display: flex;
-    flex-wrap: wrap;
-    gap:16px;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1000;
+    font-family: Arial, sans-serif;
 }
-.matrixpanel section{
-    font-size: 20px;
-   border-radius: 5px;
-    padding: 30px;
-    background-color: rgb(197, 247, 164,0.1) ;
+
+/* Header with title and transaction ID */
+.t_details_panel .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.t_details_panel .header h2 {
+    font-size: 1.2rem;
+    margin: 0;
+    color: #333;
+}
+
+/* Section for main transaction details */
+.t_details_panel > div:nth-of-type(2) p {
+    margin: 5px 0;
+    line-height: 1.4rem;
+    color: #444;
+}
+
+/* Logs / Events section */
+.t_details_panel > div:nth-of-type(3) {
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+}
+
+.t_details_panel > div:nth-of-type(3) h1 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #222;
+}
+
+.t_details_panel > div:nth-of-type(3) p {
+    font-size: 0.9rem;
+    margin: 2px 0;
+    color: #555;
+}
+
+/* Optional: hover effect for the panel (nice for click animations) */
+.t_details_panel:hover {
+    box-shadow: 0 0 120px 60px rgba(0, 0, 0, 0.8);
+    transition: box-shadow 0.3s ease;
 }

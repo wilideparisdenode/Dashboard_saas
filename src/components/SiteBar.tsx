@@ -4,7 +4,8 @@ type Props = {}
 import "./componentStyle.css";
 import { useState } from "react";
 function SiteBar({}: Props) {
-    const [open,setOpen]=useState(true);
+    const [open,setOpen]=useState(false);
+    
   return (
     <div className="site_bar">
         <div className="links">
