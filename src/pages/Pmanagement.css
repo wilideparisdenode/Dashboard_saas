@@ -1,0 +1,166 @@
+
+.inventory-page{
+    margin-top: 60px;
+}
+.filter-panel{
+    display: grid;
+    width: 90%;
+    /* justify-content: center; */
+    align-items: center;
+    margin: 0 auto;
+    background-color:  white; 
+box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+}
+
+.filter-panel form{
+display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;}
+
+  .filter-panel form .form-group{
+    font-size: 16px;
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+       padding: 5%;
+    border-radius: 10px;
+    background-color: #80808080;
+  }
+  .filter-panel form .form-group input{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+  }
+    .filter-panel form .form-group input:focus{
+        appearance: none;
+        outline:none;
+    }
+
+     .page-header{
+        position: relative;
+        margin: 20px;
+     }
+    .page-header button{
+        position: absolute;
+        right: 50px;
+        bottom:0;
+        padding: 10px;
+        text-transform: capitalize;
+        border: none;
+        background-color: rgb(19, 187, 19);
+        border-radius: 5px;
+        color: white;
+        transition: all ease .2ms;
+    }
+    .page-header button:hover{
+        transform: scale(1.1);
+        background-color:  rgb(21, 165, 21);
+    }
+    .product-table{
+        margin: 0 auto;
+        width: 90%;
+    }
+
+    .product-table tbody tr td button{
+        margin: 10px;
+    }
+    .product-table tbody tr td .del{
+        background-color: red;
+    }
+        .product-table tbody tr td .edit{
+        background-color: rgb(202, 202, 18);
+    }
+
+    /* ==this is for the modal == */
+    .modal {
+        position: fixed;
+        top: 30%;
+        left: 50%;
+        transform: translateY(-50%);
+        transform: translateX(-50%);
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+  display: grid;
+  z-index: 999;
+  gap: 15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.modal h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  color: #333;
+}
+
+.modal input {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.modal input:focus {
+  border-color: #6366f1; /* purple accent */
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+.modal button {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.modal button:first-of-type {
+  background-color: #6366f1; /* purple */
+  color: white;
+}
+
+.modal button:first-of-type:hover {
+  background-color: #4f46e5;
+  transform: scale(1.03);
+}
+
+.modal button:last-of-type {
+  background-color: #f3f4f6; /* light gray */
+  color: #111827;
+}
+
+.modal button:last-of-type:hover {
+  background-color: #e5e7eb;
+}
+/* .modal .modal-content{
+            z-index: 999;
+
+} */
+.darklayout {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    background-color: rgba(26, 25, 25, 0.63); /* dark semi-transparent overlay */
+    color: white; /* text on overlay */
+}
+
+.modal-parent{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+   
+}
