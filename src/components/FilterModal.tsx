@@ -1,4 +1,6 @@
 import { X,Calendar } from "lucide-react";
+ import "../pages/Analytics.css"
+
 function FilterModal({ isOpen, onClose, currentRange, onSelectRange }) {
   if (!isOpen) return null;
 

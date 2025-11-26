@@ -1,9 +1,9 @@
 import  { useState } from 'react';
 import { BarChart,  AreaChart, PieChart, ResponsiveContainer,Bar,
-XAxis,
+XAxis,Area,Pie,Cell,
 YAxis,
 Tooltip,
-Legend } from 'recharts';
+Legend,CartesianGrid } from 'recharts';
 import {  Users, DollarSign, Activity, Eye, Download, Filter } from 'lucide-react';
 import KPICard from '../components/KPICard';
 import FilterModal from '../components/FilterModal';
@@ -120,11 +120,35 @@ export default function AnalyticsDashboard() {
           <h3 className="chart-title">Revenue Overview</h3>
           <p className="chart-subtitle">Monthly revenue and user growth</p>
         </div>
+    <div className="Area-chart">
+        <ResponsiveContainer width="100%" height={300} >
+  <AreaChart data={revenueData}>
+    <CartesianGrid strokeDasharray="3 3" />
+    <XAxis dataKey="month" />
+    <YAxis />
 
-        <ResponsiveContainer width="100%" height={300}>
-          {/* chart code unchanged */}
-          <AreaChart data={revenueData}> ... </AreaChart>
-        </ResponsiveContainer>
+    <Tooltip />
+    <Legend />
+
+    <Area
+      type="monotone"
+      dataKey="revenue"
+      stroke="#3bf63bff"
+      fill="#24b33cdc"
+      fillOpacity={0.3}
+    />
+    <Area
+      type="monotone"
+      dataKey="users"
+      stroke="#10b981"
+      fill="#10b981"
+      fillOpacity={0.3}
+    />
+  </AreaChart>
+</ResponsiveContainer>
+    </div>
+      
+
       </div>
 
       {/* TRAFFIC SOURCES */}
@@ -134,9 +158,26 @@ export default function AnalyticsDashboard() {
           <p className="chart-subtitle">Visitor distribution</p>
         </div>
 
-        <ResponsiveContainer width="100%" height={240}>
-          <PieChart> ... </PieChart>
-        </ResponsiveContainer>
+       <ResponsiveContainer width="100%" height={240}>
+  <PieChart>
+    <Tooltip />
+
+    <Pie
+      data={trafficData}
+      dataKey="value"
+      nameKey="source"
+      cx="50%"
+      cy="50%"
+      outerRadius={90}
+      label
+    >
+      {trafficData.map((entry, index) => (
+        <Cell key={`cell-${index}`} fill={entry.color} />
+      ))}
+    </Pie>
+  </PieChart>
+</ResponsiveContainer>
+
 
         <div className="traffic-legend">
           {trafficData.map((item) => (

@@ -1,10 +1,10 @@
 import { TrendingDown,TrendingUp } from "lucide-react";
-
+"../pages/Analytics.css";
 function KPICard({ title, value, change, isPositive, icon, color }) {
   return (
     <div className="kpi-card">
       <div className="kpi-top">
-        <div className={`kpi-icon kpi-icon-${color}`}>
+        <div className={`kpi-icon kpi-icon-${color}`} style={{color:color}}>
           {icon}
         </div>
 
