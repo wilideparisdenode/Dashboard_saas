@@ -1,0 +1,38 @@
+.header-section,.order-overview{
+line-height: 30px;   
+ margin: 0 auto;
+    display: flex;
+    /* border: 2px solid red; */
+    justify-content: space-between;
+    align-items: center;
+width: 90%;
+padding: 10px;
+}
+
+.header-section h3,.order-overview h3{
+    color: grey;
+}
+
+.order-overview p{
+     color: rgba(128, 128, 128, 0.486);
+}
+.order-overview {
+    border-bottom: 2px solid rgba(128, 128, 128, 0.205);
+
+}
+
+.overview-card {
+    line-height: 30px;
+  padding: 10px;
+  /* background: #fff; */
+    border-right: 2px solid rgba(128, 128, 128, 0.205);
+}
+.overview-card:last-child {
+  border-right: none;
+}
+
+.overview-card .quantity {
+    color: black;
+    font-size: large;
+    font-weight: 600;
+}
