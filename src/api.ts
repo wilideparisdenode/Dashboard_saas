@@ -1,6 +1,22 @@
 const API_BASE = "http://localhost:5000/api"; 
-import type {CreatePaymentDTO} from "../server/components/payment/payment.dto";
+export interface CreatePaymentDTO {
+  orderId: string;
+  userId: string;
+  amount: number;
+  status:PaymentStatus;
+  method?: String;
+}
 
+export const PaymentStatus = {
+  PENDING: 'PENDING',
+  PROCESSING: 'PROCESSING',
+  COMPLETED: 'COMPLETED',
+  FAILED: 'FAILED',
+  REFUNDED: 'REFUNDED',
+} as const;
+
+export type PaymentStatus =
+  typeof PaymentStatus[keyof typeof PaymentStatus];
 // Auth interfaces
 export interface LoginCredentials {
   email: string;
