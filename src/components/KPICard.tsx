@@ -1,6 +1,14 @@
 import { TrendingDown,TrendingUp } from "lucide-react";
+import type { ReactNode } from "react";
 "../pages/Analytics.css";
-function KPICard({ title, value, change, isPositive, icon, color }) {
+export interface KPICardType{
+title: string;
+  value: string;
+  change: string;
+  isPositive: boolean;
+  icon: ReactNode;
+  color: string;}
+function KPICard({ title, value, change, isPositive, icon, color }:KPICardType) {
   return (
     <div className="kpi-card">
       <div className="kpi-top">

@@ -1,7 +1,10 @@
 import { X,Calendar } from "lucide-react";
  import "../pages/Analytics.css"
-
-function FilterModal({ isOpen, onClose, currentRange, onSelectRange }) {
+interface FilterModalType{
+  isOpen:boolean;
+  onClose:()=> void; currentRange:string; onSelectRange:(range:string)=>void;
+}
+function FilterModal({ isOpen, onClose, currentRange, onSelectRange }:FilterModalType) {
   if (!isOpen) return null;
 
   const ranges = ['Last 7 days', 'Last 30 days', 'Last 90 days', 'This year', 'Custom range'];

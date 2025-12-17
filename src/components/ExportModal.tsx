@@ -2,14 +2,19 @@ import { X } from "lucide-react";
 import { useState } from "react";
 import "../pages/Analytics.css";
 
-function ExportModal({ isOpen, onClose }) {
-  if (!isOpen) return null;
+type ExportModalProps = {
+  isOpen: boolean;
+  onClose: () => void;
+};
 
-  const [selectedFormat, setSelectedFormat] = useState('');
+function ExportModal({ isOpen, onClose }: ExportModalProps) {
+  const [selectedFormat, setSelectedFormat] = useState<string>("");
 
   function chooseFormat(format: string) {
     setSelectedFormat(format);
   }
+
+  if (!isOpen) return null;
 
   return (
     <div className="modal-overlay">
@@ -24,14 +29,18 @@ function ExportModal({ isOpen, onClose }) {
 
         {/* BODY */}
         <div className="modal-body">
-          <p className="modal-info">Select the format for your analytics export</p>
+          <p className="modal-info">
+            Select the format for your analytics export
+          </p>
 
           <div className="export-options">
-            {['CSV', 'Excel (XLSX)', 'PDF Report', 'JSON'].map((format) => (
+            {["CSV", "Excel (XLSX)", "PDF Report", "JSON"].map((format) => (
               <button
                 key={format}
                 onClick={() => chooseFormat(format)}
-                className={`export-option-btn ${selectedFormat === format ? 'active-format' : ''}`}
+                className={`export-option-btn ${
+                  selectedFormat === format ? "active-format" : ""
+                }`}
               >
                 {format}
               </button>
@@ -41,8 +50,12 @@ function ExportModal({ isOpen, onClose }) {
 
         {/* FOOTER */}
         <div className="modal-footer">
-          <button onClick={onClose} className="btn-cancel">Cancel</button>
-          <button onClick={onClose} className="btn-primary">Export</button>
+          <button onClick={onClose} className="btn-cancel">
+            Cancel
+          </button>
+          <button onClick={onClose} className="btn-primary">
+            Export
+          </button>
         </div>
       </div>
     </div>

@@ -212,3 +212,94 @@ inStock: false,
 rating: 4.5
 }
 ];
+export const orders = [
+  {
+    id: "#10212",
+    customer: "Sarah Williams",
+    date: "2025-01-10",
+    status: "Completed",
+    amount: 129.50,
+  },
+  {
+    id: "#10213",
+    customer: "James Carter",
+    date: "2025-01-12",
+    status: "Pending",
+    amount: 89.99,
+  },
+  {
+    id: "#10214",
+    customer: "Emma Johnson",
+    date: "2025-01-13",
+    status: "Processing",
+    amount: 159.00,
+  },
+  {
+    id: "#10215",
+    customer: "Michael Brown",
+    date: "2025-01-14",
+    status: "Completed",
+    amount: 210.75,
+  },
+  {
+    id: "#10216",
+    customer: "Olivia Davis",
+    date: "2025-01-16",
+    status: "Canceled",
+    amount: 45.00,
+  },
+  {
+    id: "#10217",
+    customer: "Daniel Lee",
+    date: "2025-01-18",
+    status: "Pending",
+    amount: 72.30,
+  },
+];
+// Sample data array for 10 recent activities
+export const recentActivities = [
+  { date: '2025-12-01', activity: 'User signed up', atId: 'ID001' },
+  { date: '2025-12-01', activity: 'Order placed', atId: 'ID002' },
+  { date: '2025-12-01', activity: 'Payment received', atId: 'ID003' },
+  { date: '2025-12-01', activity: 'Product added', atId: 'ID004' },
+  { date: '2025-12-01', activity: 'User updated profile', atId: 'ID005' },
+  { date: '2025-12-01', activity: 'Order shipped', atId: 'ID006' },
+  { date: '2025-12-01', activity: 'Product deleted', atId: 'ID007' },
+  { date: '2025-12-01', activity: 'New comment', atId: 'ID008' },
+  { date: '2025-12-01', activity: 'Payment refunded', atId: 'ID009' },
+  { date: '2025-12-01', activity: 'User logged in', atId: 'ID010' },
+];
+export const kpiData = [
+  {
+    title: "Total Revenue",
+    value: "$45,231",
+    change: "+12.5%",
+    isPositive: true,
+    icon: "DollarSign", // or pass the actual component when mapping
+    color: "blue",
+  },
+  {
+    title: "Total Users",
+    value: "12,304",
+    change: "+8.1%",
+    isPositive: true,
+    icon: "Users",
+    color: "green",
+  },
+  {
+    title: "Total Products",
+    value: "1,029",
+    change: "-3.2%",
+    isPositive: false,
+    icon: "Package",
+    color: "red",
+  },
+  {
+    title: "Active Subscriptions",
+    value: "3,842",
+    change: "+5.6%",
+    isPositive: true,
+    icon: "BarChart",
+    color: "purple",
+  },
+];

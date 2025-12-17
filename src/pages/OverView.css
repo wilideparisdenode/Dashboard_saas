@@ -1,0 +1,319 @@
+/* ------------------------------------------------------ */
+/* GENERAL LAYOUT */
+/* ------------------------------------------------------ */
+
+.overview-container {
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #f9fafb, #f3f4f6);
+  padding: 2rem;
+}
+
+.overview-wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ------------------------------------------------------ */
+/* HEADER */
+/* ------------------------------------------------------ */
+
+.overview-header h1 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.overview-header p {
+  color: #4b5563;
+}
+
+/* ------------------------------------------------------ */
+/* KPI GRID */
+/* ------------------------------------------------------ */
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .kpi-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ------------------------------------------------------ */
+/* KPI CARD */
+/* ------------------------------------------------------ */
+
+.kpi-card {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  border: 1px solid #f3f4f6;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  transition: box-shadow 0.2s ease;
+}
+
+.kpi-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.kpi-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.kpi-title {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 0.25rem;
+}
+
+.kpi-value {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.kpi-change {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.kpi-change span {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.kpi-positive {
+  color: #059669;
+}
+
+.kpi-negative {
+  color: #dc2626;
+}
+
+.kpi-icon-box {
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+}
+
+/* ICON COLOR BACKGROUNDS */
+.bg-emerald {
+  background: #ecfdf5;
+  color: #059669;
+}
+
+.bg-blue {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.bg-purple {
+  background: #f5f3ff;
+  color: #7c3aed;
+}
+
+.bg-orange {
+  background: #fff7ed;
+  color: #ea580c;
+}
+
+/* ------------------------------------------------------ */
+/* GRID (ACTIVITIES + QUICK ACTIONS) */
+/* ------------------------------------------------------ */
+
+.main-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .main-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ------------------------------------------------------ */
+/* RECENT ACTIVITIES */
+/* ------------------------------------------------------ */
+
+.activities-card {
+  background: white;
+  border-radius: 1rem;
+  border: 1px solid #f3f4f6;
+  padding: 1.5rem;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.activities-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.activities-header h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.activities-header p {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.activities-select {
+  padding: 0.5rem 1rem;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  color: #374151;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+/* ACTIVITY ROW */
+.activity-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background: #f9fafb;
+  border-radius: 0.5rem;
+  transition: background 0.2s ease;
+}
+
+.activity-row:hover {
+  background: #f3f4f6;
+}
+
+.activity-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.activity-dot {
+  width: 8px;
+  height: 8px;
+  background: #3b82f6;
+  border-radius: 50%;
+}
+
+.activity-info p:first-child {
+  font-weight: 600;
+  color: #111827;
+}
+
+.activity-info p:last-child {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.activity-tag {
+  padding: 0.25rem 0.75rem;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-family: monospace;
+  color: #4b5563;
+}
+
+/* ------------------------------------------------------ */
+/* QUICK ACTIONS */
+/* ------------------------------------------------------ */
+
+.quick-actions {
+  background: white;
+  border-radius: 1rem;
+  border: 1px solid #f3f4f6;
+  padding: 1.5rem;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.quick-actions h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.quick-actions p {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+}
+
+.quick-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.quick-btn:hover {
+  transform: scale(1.02);
+}
+
+/* Quick button color variants */
+.btn-blue {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.btn-blue:hover {
+  background: #dbeafe;
+}
+
+.btn-emerald {
+  background: #ecfdf5;
+  color: #059669;
+}
+
+.btn-emerald:hover {
+  background: #d1fae5;
+}
+
+.btn-purple {
+  background: #f5f3ff;
+  color: #7c3aed;
+}
+
+.btn-purple:hover {
+  background: #ede9fe;
+}
+
+.btn-orange {
+  background: #fff7ed;
+  color: #ea580c;
+}
+
+.btn-orange:hover {
+  background: #ffedd5;
+}
+
+.quick-btn-icon {
+  padding: 0.5rem;
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}

@@ -1,0 +1,77 @@
+{"user":[{    "password":"6700128392020wil",
+    "_id": "678a1f24c08cd5701590f3b2",
+    "email": "john.doe@example.com",
+    "name": "John Doe",
+    "role":"admin",
+    "status":"active",
+    "phone": "+1-555-202-9999",
+    "avatar": "https://example.com/avatars/user1.png"
+  },{
+  "password": "SecurePass8820!!",
+  "_id": "678a1f24c08cd5701590f3c1",
+  "email": "emma.watson@example.com",
+  "name": "Emma Watson",
+  "role": "manager",
+  "status": "active",
+  "phone": "+1-555-300-1122",
+  "avatar": "https://example.com/avatars/emma.png"
+},{
+  "password": "UltraSafe001#Pass",
+  "_id": "678a1f24c08cd5701590f3c2",
+  "email": "michael.ross@example.com",
+  "name": "Michael Ross",
+  "role": "admin",
+  "status": "suspended",
+  "phone": "+1-555-880-4499",
+  "avatar": "https://example.com/avatars/michael.png"
+},
+{
+  "password": "MyStrongKey9988$",
+  "_id": "678a1f24c08cd5701590f3c3",
+  "email": "sophia.jones@example.com",
+  "name": "Sophia Jones",
+  "role": "user",
+  "status": "active",
+  "phone": "+1-555-441-2299",
+  "avatar": "https://example.com/avatars/sophia.png"
+}
+],
+"products":[{"_id":"6932c83b6cfba117e3a18c45","description":"RGB mechanical keyboard with brown switches.","stock":75,"name":"Mechanical Keyboard","price":89.5,"category":"Electronics","imageUrl":"https://example.com/products/keyboard1.png","createdAt":"2025-12-05T11:55:39.819Z","updatedAt":"2025-12-05T11:55:39.819Z","__v":0},{"_id":"6932c8486cfba117e3a18c47","description":"Lightweight breathable running shoes for daily training.","stock":200,"name":"Running Shoes","price":65,"category":"Sports","imageUrl":"https://example.com/products/shoes1.png","createdAt":"2025-12-05T11:55:52.318Z","updatedAt":"2025-12-05T11:55:52.318Z","__v":0},{"_id":"6932c8576cfba117e3a18c49","description":"Ergonomic adjustable office chair with lumbar support.","stock":40,"name":"Office Chair","price":150,"category":"Furniture","imageUrl":"https://example.com/products/chair1.png","createdAt":"2025-12-05T11:56:07.549Z","updatedAt":"2025-12-05T11:56:07.549Z","__v":0}]
+,
+  "payments": [
+    {
+      "_id": "6950bb22cd88e321aa11bb01",
+      "orderId": "6950aa11bc99e321ff01aa01",
+      "userId": "678a1f24c08cd5701590f3b2",
+      "method": "credit_card",
+      "amount": 89.5,
+      "status": "PENDING",
+      "transactionId": "TXN-11aa22bb",
+      "createdAt": "2025-12-06T11:00:00.000Z",
+      "updatedAt": "2025-12-06T11:00:00.000Z"
+    },
+    {
+      "_id": "6950bb22cd88e321aa11bb02",
+      "orderId": "6950aa11bc99e321ff01aa02",
+      "userId": "678a1f24c08cd5701590f3c1",
+      "method": "paypal",
+      "amount": 130,
+      "status": "COMPLETED",
+      "transactionId": "TXN-33cc44dd",
+      "createdAt": "2025-12-06T11:05:00.000Z",
+      "updatedAt": "2025-12-06T11:06:20.000Z"
+    },
+    {
+      "_id": "6950bb22cd88e321aa11bb03",
+      "orderId": "6950aa11bc99e321ff01aa03",
+      "userId": "678a1f24c08cd5701590f3c3",
+      "method": "bank_transfer",
+      "amount": 150,
+      "status": "REFUNDED",
+      "transactionId": "TXN-55ee66ff",
+      "createdAt": "2025-12-06T11:10:00.000Z",
+      "updatedAt": "2025-12-06T11:30:00.000Z"
+    }
+  ]
+}
+
