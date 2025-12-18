@@ -1,4 +1,4 @@
-const API_BASE = "https://dashboard-saas-back-end.onrender.com"; 
+const API_BASE = "https://dashboard-saas-back-end.onrender.com/api"; 
 export interface CreatePaymentDTO {
   orderId: string;
   userId: string;
