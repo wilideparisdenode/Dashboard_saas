@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from './AuthContext';
 import { 
@@ -7,7 +7,8 @@ import {
   FaPhone, 
   FaLock, 
   FaUserPlus,
-  FaArrowLeft 
+  FaArrowLeft,
+  FaInfoCircle
 } from 'react-icons/fa';
 import './Auth.css';
 
@@ -36,7 +37,6 @@ const RegisterPage: React.FC = () => {
     e.preventDefault();
     setError('');
 
-    // Validation
     if (formData.password !== formData.confirmPassword) {
       setError('Passwords do not match');
       return;
@@ -67,12 +67,18 @@ const RegisterPage: React.FC = () => {
   return (
     <div className="auth-container">
       <div className="auth-card">
-        <button 
-          onClick={() => navigate('/')}
-          className="back-btn"
-        >
+        <button onClick={() => navigate('/')} className="back-btn">
           <FaArrowLeft /> Back to Home
         </button>
+
+        {/* DEMO NOTICE */}
+        <div className="demo-notice">
+          <FaInfoCircle />
+          <span>
+            Demo environment — account creation is open and permissions are
+            intentionally simplified for portfolio demonstration purposes.
+          </span>
+        </div>
 
         <div className="auth-header">
           <div className="auth-icon">
@@ -82,11 +88,7 @@ const RegisterPage: React.FC = () => {
           <p className="auth-subtitle">Join our platform today</p>
         </div>
 
-        {error && (
-          <div className="auth-error">
-            {error}
-          </div>
-        )}
+        {error && <div className="auth-error">{error}</div>}
 
         <form onSubmit={handleSubmit} className="auth-form">
           <div className="form-group">
@@ -168,11 +170,7 @@ const RegisterPage: React.FC = () => {
             />
           </div>
 
-          <button 
-            type="submit" 
-            className="auth-btn"
-            disabled={isLoading}
-          >
+          <button type="submit" className="auth-btn" disabled={isLoading}>
             {isLoading ? (
               <>
                 <div className="spinner"></div>
